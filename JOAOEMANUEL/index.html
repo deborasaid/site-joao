@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5C96PR6L');</script>
+  <!-- End Google Tag Manager -->
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMKPLZ54XV"></script>
 <script>
@@ -9,8 +19,7 @@
 
   gtag('config', 'G-VMKPLZ54XV');
 </script>
-<head>
-  <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="João Emanuel Moreira Lima — Escritor, poeta e voz que transforma vidas através das palavras." />
   <title>João Emanuel Moreira Lima — Autor</title>
@@ -357,6 +366,41 @@
     .livro-btn:hover { gap: .9rem; border-color: var(--gold); }
 
     /* ═══════════════════════════════════════
+       MODAL DE DOWNLOAD
+    ═══════════════════════════════════════ */
+    button.livro-btn { background: none; border-top: 0; border-left: 0; border-right: 0; cursor: pointer; font-family: var(--ff-sans); }
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(13,27,42,.82); backdrop-filter: blur(4px);
+      display: none; align-items: center; justify-content: center; padding: 1.25rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      position: relative; width: 100%; max-width: 440px;
+      background: var(--navy-mid); border: 1px solid rgba(198,168,91,.35);
+      padding: 2.2rem 1.8rem 1.8rem; color: var(--off-white);
+      max-height: calc(100vh - 2.5rem); overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute; top: .6rem; right: .8rem; background: none; border: 0;
+      color: var(--slate); font-size: 1.6rem; line-height: 1; cursor: pointer;
+    }
+    .modal-close:hover { color: var(--gold); }
+    .modal-box .label { display: block; margin-bottom: .6rem; }
+    .modal-titulo { font-family: var(--ff-serif); font-size: 1.6rem; font-weight: 400; color: var(--cream); line-height: 1.25; margin-bottom: .5rem; }
+    .modal-sub { font-size: .85rem; color: var(--slate); line-height: 1.7; margin-bottom: 1.4rem; }
+    .modal-box .form-group { margin-bottom: 1rem; }
+    .modal-box label { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--slate); margin-bottom: .4rem; }
+    .modal-box input {
+      width: 100%; padding: .8rem .9rem; background: rgba(255,255,255,.04);
+      border: 1px solid rgba(119,141,169,.35); color: var(--cream);
+      font-family: var(--ff-sans); font-size: .95rem; outline: none;
+    }
+    .modal-box input:focus { border-color: var(--gold); }
+    .modal-lgpd { font-size: .72rem; color: var(--steel); line-height: 1.6; margin: .4rem 0 1.2rem; }
+    .modal-erro { font-size: .8rem; color: #e8a0a0; margin-top: .8rem; display: none; }
+
+    /* ═══════════════════════════════════════
        PROVA SOCIAL
     ═══════════════════════════════════════ */
     .social-proof {
@@ -545,6 +589,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C96PR6L"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- NAV -->
   <nav class="nav" id="navbar" aria-label="Navegação principal">
@@ -631,7 +679,7 @@
         <h2 class="section-title" id="livros-titulo" style="margin-top:1rem;">Os Livros</h2>
         <div class="section-line"></div>
         <p style="color:var(--slate);font-size:.92rem;max-width:500px;line-height:1.9;margin-top:1.2rem;">
-          Todas as obras disponíveis para download gratuito. Sem cadastro, sem custo — só leitura.
+          Todas as obras disponíveis para download gratuito. Sem custo — é só deixar seu contato e baixar.
         </p>
       </div>
 
@@ -650,13 +698,9 @@
             <h3 class="livro-titulo">Você é o Amor</h3>
             <p class="livro-desc">Poemas e palavras para inspirar em tempos difíceis. Uma obra que toca a alma com leveza e profundidade.</p>
             <p class="livro-meta">123 páginas · Cuiabá, 2018</p>
-            <a class="livro-btn" <a class="livro-btn"
-            href="/livros/voce-e-o-amor.pdf"
-            target="_blank"
-            rel="noopener noreferrer">
-            Download gratuito →
-            </a>
-            </a>
+            <button type="button" class="livro-btn" data-livro="Você é o Amor" data-aba="você é o amor" data-pdf="/livros/voce-e-o-amor.pdf">
+              Download gratuito →
+            </button>
           </div>
         </div>
 
@@ -673,12 +717,9 @@
             <h3 class="livro-titulo">Você Só Pode Amar</h3>
             <p class="livro-desc">Uma jornada poética sobre o amor em suas formas mais puras e complexas. Palavras que ficam e transformam.</p>
             <p class="livro-meta">144 páginas</p>
-            <a class="livro-btn"
-              href="/livros/voce-so-pode-amar.pdf"
-              target="_blank"
-              rel="noopener noreferrer">
-            Download gratuito →
-            </a>
+            <button type="button" class="livro-btn" data-livro="Você Só Pode Amar" data-aba="você só pode amar" data-pdf="/livros/voce-so-pode-amar.pdf">
+              Download gratuito →
+            </button>
           </div>
         </div>
       </div>
@@ -817,6 +858,33 @@
     </div>
   </section>
 
+  <!-- ═══ MODAL DOWNLOAD ═══ -->
+  <div class="modal-overlay" id="modalLivro" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" aria-hidden="true">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="modalFechar" aria-label="Fechar">&times;</button>
+      <span class="label">Download gratuito</span>
+      <h3 class="modal-titulo" id="modalTitulo">Receba seu livro</h3>
+      <p class="modal-sub">Preencha seus dados e o download começa em seguida.</p>
+      <form id="formLivro" novalidate>
+        <div class="form-group">
+          <label for="lead-nome">Nome</label>
+          <input type="text" id="lead-nome" name="nome" required autocomplete="name" placeholder="Seu nome" />
+        </div>
+        <div class="form-group">
+          <label for="lead-whats">WhatsApp com DDD</label>
+          <input type="tel" id="lead-whats" name="whatsapp" required autocomplete="tel" inputmode="tel" placeholder="(DDD) 00000-0000" maxlength="16" />
+        </div>
+        <div class="form-group">
+          <label for="lead-email">E-mail</label>
+          <input type="email" id="lead-email" name="email" required autocomplete="email" placeholder="seu@email.com" />
+        </div>
+        <p class="modal-lgpd">Ao continuar, você concorda em receber conteúdos de João Emanuel. Seus dados não serão compartilhados.</p>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">Baixar agora</button>
+        <p class="modal-erro" id="modalErro">Preencha nome, WhatsApp com DDD e e-mail válidos.</p>
+      </form>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <span class="footer-logo">João Emanuel</span>
@@ -853,15 +921,86 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Formulário
-    function enviarForm(e) {
+    // ═══ Envio para Google Sheets (Apps Script) ═══
+    const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwRQWQ95VzSPKElErf8xGx1hjgJhk07tbxn5BgPTx-Lq7i9X4008N_ulYMKnz2ttls/exec'; // termina em /exec
+    const ABA_CONTATO = 'Form Cadastro Site';
+
+    function getUTMs() {
+      const p = new URLSearchParams(location.search);
+      const out = {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => {
+        const v = p.get(k) || sessionStorage.getItem(k) || '';
+        if (p.get(k)) { try { sessionStorage.setItem(k, v); } catch(e){} }
+        out[k] = v;
+      });
+      return out;
+    }
+    getUTMs(); // guarda as UTMs da entrada
+
+    function enviarParaPlanilha(dados) {
+      const body = new URLSearchParams({ ...dados, ...getUTMs(), pagina: location.href });
+      // no-cors: o Apps Script recebe normalmente; a resposta não é lida
+      const envio = fetch(SHEETS_URL, { method: 'POST', mode: 'no-cors', body, keepalive: true }).catch(() => {});
+      const limite = new Promise(r => setTimeout(r, 2500)); // não trava o usuário
+      return Promise.race([envio, limite]);
+    }
+
+    // ═══ Modal de download ═══
+    const modal = document.getElementById('modalLivro');
+    const formLivro = document.getElementById('formLivro');
+    const erroLivro = document.getElementById('modalErro');
+    let livroAtual = null;
+
+    function abrirModal(btn) {
+      livroAtual = { nome: btn.dataset.livro, aba: btn.dataset.aba, pdf: btn.dataset.pdf };
+      document.getElementById('modalTitulo').textContent = 'Receba “' + livroAtual.nome + '”';
+      erroLivro.style.display = 'none';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('lead-nome').focus(), 50);
+      window.dataLayer.push({ event: 'abrir_modal_livro', livro: livroAtual.nome });
+    }
+    function fecharModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.livro-btn[data-pdf]').forEach(b => b.addEventListener('click', () => abrirModal(b)));
+    document.getElementById('modalFechar').addEventListener('click', fecharModal);
+    modal.addEventListener('click', e => { if (e.target === modal) fecharModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) fecharModal(); });
+
+    formLivro.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
+      const nome = formLivro.nome.value.trim();
+      const email = formLivro.email.value.trim();
+      const whatsapp = formLivro.whatsapp.value.replace(/\D/g, '');
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!nome || !emailOk || whatsapp.length < 10) { erroLivro.style.display = 'block'; return; }
+      erroLivro.style.display = 'none';
+
+      const btn = formLivro.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Preparando seu livro...';
+
+      window.dataLayer.push({ event: 'lead_livro', livro: livroAtual.nome, form_id: 'formLivro' });
+      await enviarParaPlanilha({ aba: livroAtual.aba, livro: livroAtual.nome, nome, email, whatsapp });
+
+      window.location.href = livroAtual.pdf; // redireciona para o PDF
+    });
+
+    // ═══ Formulário de contato ═══
+    async function enviarForm(e) {
+      e.preventDefault();
+      const f = e.target;
+      const btn = f.querySelector('button[type="submit"]');
       const orig = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Enviando...';
+      window.dataLayer.push({ event: 'contato_enviado', form_id: 'contato' });
+      await enviarParaPlanilha({ aba: ABA_CONTATO, nome: f.nome.value.trim(), email: f.email.value.trim(), mensagem: f.mensagem.value.trim() });
       btn.textContent = 'Mensagem enviada ✓';
       btn.style.background = 'var(--gold-lt)';
-      btn.disabled = true;
-      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 3500);
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; f.reset(); }, 3500);
     }
   </script>
 </body>
