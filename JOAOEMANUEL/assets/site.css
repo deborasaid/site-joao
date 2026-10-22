@@ -619,7 +619,7 @@ footer p { font-size: .75rem; color: var(--slate); }
 .post-card a { display: flex; flex-direction: column; height: 100%; padding: 1.8rem; }
 .post-card .livro-genero { margin-bottom: .9rem; }
 .post-card h2, .post-card h3 { font-family: var(--ff-serif); font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 400; color: var(--cream); line-height: 1.3; margin-bottom: .8rem; }
-.post-card p { font-size: .86rem; line-height: 1.8; color: var(--slate); flex: 1; margin-bottom: 1.2rem; }
+.post-card p { overflow-wrap: anywhere; font-size: .86rem; line-height: 1.8; color: var(--slate); flex: 1; margin-bottom: 1.2rem; }
 .post-meta { font-size: .72rem; letter-spacing: .06em; color: var(--steel); }
 .blog-vazio { color: var(--slate); font-size: .95rem; line-height: 1.9; max-width: 520px; }
 .artigo .container { max-width: 760px; }
