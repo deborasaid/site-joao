@@ -609,3 +609,39 @@ footer p { font-size: .75rem; color: var(--slate); }
   .livro-hero { grid-template-columns: 1fr; }
   .livro-hero-capa { max-width: 260px; }
 }
+
+/* ═══════════════════════════════════════
+   BLOG (índice e artigo, gerados pelo n8n)
+═══════════════════════════════════════ */
+.post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: clamp(1.2rem, 2.5vw, 2rem); }
+.post-card { background: var(--navy-mid); border: 1px solid rgba(119,141,169,.15); transition: transform .35s var(--ease-out), border-color .3s; }
+.post-card:hover { transform: translateY(-4px); border-color: rgba(198,168,91,.4); }
+.post-card a { display: flex; flex-direction: column; height: 100%; padding: 1.8rem; }
+.post-card .livro-genero { margin-bottom: .9rem; }
+.post-card h2, .post-card h3 { font-family: var(--ff-serif); font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 400; color: var(--cream); line-height: 1.3; margin-bottom: .8rem; }
+.post-card p { font-size: .86rem; line-height: 1.8; color: var(--slate); flex: 1; margin-bottom: 1.2rem; }
+.post-meta { font-size: .72rem; letter-spacing: .06em; color: var(--steel); }
+.blog-vazio { color: var(--slate); font-size: .95rem; line-height: 1.9; max-width: 520px; }
+.artigo .container { max-width: 760px; }
+.artigo-lede { font-family: var(--ff-serif); font-style: italic; color: var(--gold); font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.6; margin: 1.4rem 0 1.2rem; }
+.prose { margin-top: 2.5rem; }
+.prose p, .prose li { font-size: clamp(.98rem, 1.2vw, 1.06rem); line-height: 2; color: var(--off-white); opacity: .9; }
+.prose p + p { margin-top: 1.2rem; }
+.prose h2 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(1.5rem, 2.8vw, 2rem); color: var(--cream); line-height: 1.25; margin: 2.6rem 0 1rem; }
+.prose ul { margin: 1.2rem 0 1.2rem 1.2rem; }
+.prose li + li { margin-top: .5rem; }
+.prose strong { color: var(--cream); font-weight: 500; }
+.prose blockquote { font-family: var(--ff-serif); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--cream); line-height: 1.7; white-space: pre-line; border-left: 2px solid var(--gold); padding: .3rem 0 .3rem 1.6rem; margin: 2rem 0; }
+.prose blockquote cite { display: block; margin-top: .8rem; font-family: var(--ff-sans); font-style: normal; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.prose a:not(.btn) { color: var(--cream); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; font-weight: 500; }
+.prose a:not(.btn):hover { color: var(--gold); text-decoration-thickness: 2px; }
+.livro-box { display: grid; grid-template-columns: 120px 1fr; gap: 1.6rem; align-items: center; margin: 2.8rem 0; padding: 1.6rem; background: var(--navy-mid); border: 1px solid rgba(198,168,91,.3); }
+.livro-box img { width: 100%; height: auto; }
+.livro-box h3 { font-family: var(--ff-serif); font-weight: 400; font-size: 1.35rem; color: var(--cream); margin: .4rem 0 .5rem; }
+.livro-box p { font-size: .88rem; line-height: 1.75; color: var(--slate); margin-bottom: 1.1rem; }
+.livro-box .btn { padding: .75rem 1.5rem; }
+.autor-box { display: flex; gap: 1.2rem; align-items: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(119,141,169,.15); }
+.autor-box img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: top; }
+.autor-box p { font-size: .85rem; line-height: 1.7; color: var(--slate); }
+.autor-box strong { color: var(--cream); font-weight: 500; }
+@media (max-width: 520px) { .livro-box { grid-template-columns: 1fr; } .livro-box img { max-width: 140px; } }
